@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+       <!-- PRODUCCIÓN -->
+	   <property name="hibernate.connection.url">jdbc:oracle:thin:@anonimized:1521/ORAPROD.UA.ES</property>
+	   <!-- PREPRODUCCION 
+       	 <property name="hibernate.connection.url">jdbc:oracle:thin:@anonimized:1521/anonimized</property> -->
+        <property name="hibernate.connection.username">anonimized</property>
+        <property name="hibernate.connection.password">anonimized</property>
+        <!-- DESARROLLO -->
+        <!-- <property name="hibernate.connection.url">jdbc:oracle:thin:@anonimized:1521/anonimized</property> 
+       	<property name="hibernate.connection.username">anonimized</property>
+        <property name="hibernate.connection.password">anonimized</property> -->
+
+        	<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        
+        <property name="hibernate.default_schema">OPEN_DATA_ADM</property>
+        <!-- <property name="hibernate.default_schema">anonimized</property> --> 
+       
+       	 <!-- <property name="connection.pool_size">10</property> -->
+       
+       <property name="connection.provider_class">
+		    org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider
+		</property>
+       	<property name="hibernate.c3p0.min_size">2</property>
+  		<property name="hibernate.c3p0.max_size">10</property>
+  		<property name="hibernate.c3p0.timeout">3000</property>
+  		<!-- <property name="hibernate.c3p0.max_statements">5</property> -->
+		<!-- <property name="hibernate.c3p0.idle_test_period">10</property> --> 
+		   		  		
+  		<property name="current_session_context_class">thread</property>
+  		
+  		<!-- <property name="show_sql">true</property>
+  		<property name="format_sql">true</property> -->
+  		
+  		<property name="hibernate.generate_statistics">true</property>
+        
+        <mapping class="es.ua.datos.model.ImagesApps"/>
+       	
+        <mapping class="es.ua.datos.model.Dataset"/>
+        
+        <mapping class="es.ua.datos.model.Resource"/>
+        
+        <mapping class="es.ua.datos.model.Category"/>
+        
+        <mapping class="es.ua.datos.model.RelatedDataset"/>
+        
+        <mapping class="es.ua.datos.model.CategoryDataset"/>
+        
+        <mapping class="es.ua.datos.model.Application"/>
+        
+        <mapping class="es.ua.datos.model.ApplicationDataset"/>
+        
+        <mapping class="es.ua.datos.model.ApplicationTypes"/>        
+        
+        <mapping class="es.ua.datos.model.ResourcesApplication"/>
+        
+        
+        <mapping class="es.ua.datos.model.DatasetTransp"/>
+        <mapping class="es.ua.datos.model.ResourceTransp"/>
+        <mapping class="es.ua.datos.model.Language"/>
+        <mapping class="es.ua.datos.model.Translation"/>
+        <mapping class="es.ua.datos.model.CategoryTransp"/>
+        <mapping class="es.ua.datos.model.CategoryDatasetTransp"/>
+        <mapping class="es.ua.datos.model.DatasetDatasetTransp"/>
+        
+        
+        
+       <!--  <mapping class="es.ua.datos.model.Datasets_Categories"/>--> 
+    </session-factory>
+    
+    
+    
+</hibernate-configuration>
